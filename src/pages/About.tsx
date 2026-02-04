@@ -119,6 +119,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Mission */}
