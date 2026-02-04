@@ -180,6 +180,14 @@ export default function Services() {
             </div>
           </div>
 
+          <div className="mb-8 rounded-2xl overflow-hidden border border-gold/20">
+            <img
+              src={`${baseUrl}images/legacy/yoga-class-pexels.jpg`}
+              alt="Group yoga class in a calm studio"
+              className="w-full h-64 md:h-80 object-cover"
+            />
+          </div>
+
           <div className="bg-dark rounded-lg p-6 border border-gold/30">
             <p className="text-white/70 leading-relaxed mb-6">
               Join us for a gentle, all-levels yoga session designed to support mindfulness, flexibility,
@@ -195,6 +203,10 @@ export default function Services() {
               <div className="flex items-center gap-2 text-gold">
                 <span className="font-medium">Location:</span>
                 <span className="text-white/70">ISKCON of New Jersey Temple Hall</span>
+              </div>
+              <div className="flex items-center gap-2 text-gold">
+                <span className="font-medium">Note:</span>
+                <span className="text-white/70">Sessions are held based on demand, so please contact the temple if you are interested.</span>
               </div>
             </div>
           </div>

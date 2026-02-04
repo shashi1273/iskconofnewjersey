@@ -63,7 +63,7 @@ export default function Layout() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-transparent">
       {/* Top Banner - New Temple Promo */}
       <div className="bg-gold/10 border-b border-gold/30 py-2 px-4 text-center">
         <a 

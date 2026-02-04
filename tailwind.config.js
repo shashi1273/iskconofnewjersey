@@ -16,8 +16,8 @@ export default {
         muted: '#A0A0A0',
       },
       fontFamily: {
-        heading: ['Playfair Display', 'Georgia', 'serif'],
-        body: ['Lato', '-apple-system', 'sans-serif'],
+        heading: ['Fraunces', 'Georgia', 'serif'],
+        body: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
         glow: '0 8px 24px rgba(0,0,0,0.6), 0 0 15px rgba(218,165,32,0.2)',
