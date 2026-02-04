@@ -3,6 +3,8 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, Clock, MapPin, Mail, Phone, Facebook, Instagram, Twitter, ChevronDown, ExternalLink } from 'lucide-react';
 import DarshanModal from './DarshanModal';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const navItems = [
   { name: 'Home', path: '/' },
   { 
@@ -82,7 +84,7 @@ export default function Layout() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <img 
-                src="/images/iskcon-logo.avif" 
+                src={`${baseUrl}images/iskcon-logo.avif`} 
                 alt="ISKCON Logo" 
                 className="h-14 w-auto"
               />

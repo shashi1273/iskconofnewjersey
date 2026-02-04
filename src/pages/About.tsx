@@ -1,10 +1,11 @@
 import { MapPin, Mail, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
 const boardMembers = [
-  { name: 'Madhupati Das', role: 'GBC Representative', image: '/images/leadership/madhupati-das.jpg', description: 'Represents the Governing Body Commission locally' },
-  { name: 'Nilamani Das', role: 'Temple President', image: '/images/leadership/nilamani-das.jpg', description: 'Oversees all temple operations and spiritual programs' },
-  { name: 'Shyamkund Das', role: 'Vice President', image: '/images/leadership/shyamkund-das.jpg', description: 'Assists in management and community development' },
-  { name: 'Madanagopala Das', role: 'Communications Director', image: '/images/leadership/madanagopala-das.jpg', description: 'Manages outreach and temple communications' },
+  { name: 'Madhupati Das', role: 'GBC Representative', image: `${baseUrl}images/leadership/madhupati-das.jpg`, description: 'Represents the Governing Body Commission locally' },
+  { name: 'Nilamani Das', role: 'Temple President', image: `${baseUrl}images/leadership/nilamani-das.jpg`, description: 'Oversees all temple operations and spiritual programs' },
+  { name: 'Shyamkund Das', role: 'Vice President', image: `${baseUrl}images/leadership/shyamkund-das.jpg`, description: 'Assists in management and community development' },
+  { name: 'Madanagopala Das', role: 'Communications Director', image: `${baseUrl}images/leadership/madanagopala-das.jpg`, description: 'Manages outreach and temple communications' },
 ];
 
 export default function About() {
@@ -15,7 +16,7 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/70 to-dark z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/temple-interior.avif)' }}
+          style={{ backgroundImage: `url(${baseUrl}images/temple-interior.avif)` }}
         />
         <div className="relative z-20">
           <p className="text-gold uppercase tracking-widest text-sm mb-2">Our Story</p>
@@ -59,7 +60,7 @@ export default function About() {
         <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/50 to-charcoal z-10" />
           <img
-            src="/images/leadership/leadershippillar.avif"
+            src={`${baseUrl}images/leadership/leadershippillar.avif`}
             alt="ISKCON Temple Architecture"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -81,7 +82,7 @@ export default function About() {
             <div className="max-w-3xl mx-auto">
               <div className="card overflow-hidden">
                 <img 
-                  src="/images/leadership/co-gbc-secretaries.png" 
+                  src={`${baseUrl}images/leadership/co-gbc-secretaries.png`} 
                   alt="HH Devamrita Swami and HG Anuttama Dasa - Co-GBC Zonal Secretaries" 
                   className="w-full h-auto object-cover rounded-lg mb-4"
                 />

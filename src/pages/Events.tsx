@@ -1,5 +1,7 @@
 import { Calendar, Clock } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const upcomingEvents = [
   { title: 'Bhagavad Gita 10-Week Course', date: 'Feb 05, 2026', time: '8:00-9:00 PM', description: 'Join us for a comprehensive 10-week journey through the Bhagavad Gita.' },
   { title: 'Vijaya Ekadasi', date: 'Feb 12, 2026', time: 'All Day', description: 'Auspicious fasting day with extended kirtan and spiritual programs.' },
@@ -23,7 +25,7 @@ export default function Events() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/70 to-dark z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/temple-event.avif)' }}
+          style={{ backgroundImage: `url(${baseUrl}images/temple-event.avif)` }}
         />
         <div className="relative z-20">
           <p className="text-gold uppercase tracking-widest text-sm mb-2">Calendar</p>

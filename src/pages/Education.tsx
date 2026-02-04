@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BookOpen, Users, Clock, Calendar, ChevronRight, ExternalLink } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
 const classes = [
   { name: 'Gopal', ages: 'Ages 3-Kindergarten', description: 'Introduction to Krishna consciousness through stories and activities' },
   { name: 'Kishore', ages: 'Grades 1-3', description: 'Building foundational knowledge of Vedic culture and values' },
@@ -32,7 +33,7 @@ export default function Education() {
           {/* Sunday School Image */}
           <div className="mb-12 rounded-lg overflow-hidden">
             <img 
-              src="/images/sunday-school-children.avif" 
+              src={`${baseUrl}images/sunday-school-children.avif`} 
               alt="Sunday School Children" 
               className="w-full h-64 md:h-80 object-cover"
             />

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, ChevronRight, Heart, BookOpen, Users } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
 const events = [
   { title: 'Ekadashi Observance', date: 'Every 11th day', description: 'Special fasting day with extended kirtan and spiritual programs.' },
   { title: 'Bhagavad Gita Course', date: 'Saturdays 6PM', description: 'Study the timeless wisdom of the Gita in a structured course format.' },
@@ -15,7 +16,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/60 to-dark z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/hero-background.avif)' }}
+          style={{ backgroundImage: `url(${baseUrl}images/hero-background.avif)` }}
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Since 1981</p>
@@ -87,7 +88,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-video rounded-lg overflow-hidden">
             <img 
-              src="/images/ornate-hindu-temple-interior-golden-pillar.jpg" 
+              src={`${baseUrl}images/ornate-hindu-temple-interior-golden-pillar.jpg`} 
               alt="Temple Interior" 
               className="w-full h-full object-cover"
             />
