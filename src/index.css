@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-100: #F9EFC1;
+  --primary-500: #DAA520;
+  --primary-700: #B8860B;
+  --primary-900: #8B6508;
+  --bg-900: #121212;
+  --bg-800: #1E1E1E;
+  --bg-700: #2D2D2D;
+  --text-50: #FAFAFA;
+  --text-200: #E0E0E0;
+  --text-400: #A0A0A0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-900);
+  color: var(--text-50);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-black px-6 py-3 uppercase text-sm font-bold tracking-wider rounded transition-all duration-300 hover:bg-gold-light;
+  }
+  .btn-secondary {
+    @apply border border-gold text-gold px-6 py-3 uppercase text-sm font-bold tracking-wider rounded transition-all duration-300 hover:bg-gold hover:text-black;
+  }
+  .card {
+    @apply bg-charcoal rounded-lg border-t-2 border-gold p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow;
+  }
+  .gold-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-30;
+  }
+}
