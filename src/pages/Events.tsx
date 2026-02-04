@@ -133,7 +133,7 @@ export default function Events() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/70 to-dark z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${baseUrl}images/temple-event.avif)` }}
+          style={{ backgroundImage: `url(${baseUrl}images/legacy/events-gita-course.png)` }}
         />
         <div className="relative z-20">
           <p className="text-gold uppercase tracking-widest text-sm mb-2">Calendar</p>

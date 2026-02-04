@@ -16,7 +16,7 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/70 to-dark z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${baseUrl}images/temple-interior.avif)` }}
+          style={{ backgroundImage: `url(${baseUrl}images/legacy/home-hero-web-5.jpeg)` }}
         />
         <div className="relative z-20">
           <p className="text-gold uppercase tracking-widest text-sm mb-2">Our Story</p>

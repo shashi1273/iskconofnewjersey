@@ -85,7 +85,7 @@ export default function Layout() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <img 
-                src={`${baseUrl}images/iskcon-logo.avif`} 
+                src={`${baseUrl}images/legacy/logo-iskcon-nj.jpg`} 
                 alt="ISKCON Logo" 
                 className="h-14 w-auto"
               />

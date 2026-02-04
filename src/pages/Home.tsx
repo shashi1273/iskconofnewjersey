@@ -16,7 +16,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/60 to-dark z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${baseUrl}images/hero-background.avif)` }}
+          style={{ backgroundImage: `url(${baseUrl}images/legacy/home-hero-web-5.jpeg)` }}
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Since 1981</p>
@@ -88,7 +88,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-video rounded-lg overflow-hidden">
             <img 
-              src={`${baseUrl}images/ornate-hindu-temple-interior-golden-pillar.jpg`} 
+              src={`${baseUrl}images/legacy/operations-board-untitled.jpg`} 
               alt="Temple Interior" 
               className="w-full h-full object-cover"
             />

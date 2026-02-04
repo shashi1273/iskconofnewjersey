@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Heart, Utensils, Phone, Mail, Leaf } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const samskaras = [
   { name: 'Vivah (Marriage)', inTemple: '$501', outside: '$601' },
   { name: 'Simantonnayana (Baby Shower)', inTemple: '$201', outside: '$251' },
@@ -91,6 +93,14 @@ export default function Services() {
               <h2 className="font-heading text-3xl text-white">Samskaras & Pujas</h2>
               <p className="text-white/60">Sacred Vedic ceremonies for life's milestones</p>
             </div>
+          </div>
+
+          <div className="mb-8 rounded-lg overflow-hidden">
+            <img
+              src={`${baseUrl}images/legacy/samskaras-gurugram1.jpeg`}
+              alt="Samskaras and temple services"
+              className="w-full h-64 md:h-80 object-cover"
+            />
           </div>
 
           {/* Samskaras Table */}
@@ -202,6 +212,14 @@ export default function Services() {
               <h2 className="font-heading text-3xl text-white">Govinda's Catering</h2>
               <p className="text-white/60">Authentic vegetarian cuisine for all occasions</p>
             </div>
+          </div>
+
+          <div className="mb-8 rounded-lg overflow-hidden">
+            <img
+              src={`${baseUrl}images/legacy/catering-0f137d2a.jpg`}
+              alt="Govinda's vegetarian catering"
+              className="w-full h-64 md:h-80 object-cover"
+            />
           </div>
 
           {/* Appetizers */}

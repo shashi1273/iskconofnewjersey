@@ -33,7 +33,7 @@ export default function Education() {
           {/* Sunday School Image */}
           <div className="mb-12 rounded-lg overflow-hidden">
             <img 
-              src={`${baseUrl}images/sunday-school-children.avif`} 
+              src={`${baseUrl}images/legacy/sunday-school-balika.jpeg`} 
               alt="Sunday School Children" 
               className="w-full h-64 md:h-80 object-cover"
             />
