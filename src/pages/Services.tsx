@@ -182,8 +182,8 @@ export default function Services() {
 
           <div className="mb-8 rounded-2xl overflow-hidden border border-gold/20">
             <img
-              src={`${baseUrl}images/legacy/yoga-class-pexels.jpg`}
-              alt="Group yoga class in a calm studio"
+              src={`${baseUrl}images/legacy/yoga-seashore.jpg`}
+              alt="Woman practicing yoga by the seashore"
               className="w-full h-64 md:h-80 object-cover"
             />
           </div>
