@@ -22,8 +22,7 @@ export default function Home() {
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Since 1981</p>
           <h1 className="font-heading text-5xl md:text-7xl text-white mb-6">Welcoming You Home</h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            Experience the divine presence of Sri Sri Radha Vrindavan Chandra at ISKCON of New Jersey. 
-            Join us in devotion, community, and spiritual growth.
+            Experience the divine presence  Ram Parivar of New Jersey. Join us in devotion, community, and spiritual growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/donate" className="btn-primary">Support the Temple</Link>
