@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Utensils, Phone, Mail } from 'lucide-react';
+import { Heart, Utensils, Phone, Mail, Leaf } from 'lucide-react';
 
 const samskaras = [
   { name: 'Vivah (Marriage)', inTemple: '$501', outside: '$601' },
@@ -157,8 +157,42 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Yoga Section */}
+      <section id="yoga" className="py-24 px-4 bg-charcoal">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
+              <Leaf className="w-7 h-7 text-gold" />
+            </div>
+            <div>
+              <h2 className="font-heading text-3xl text-white">Sunday Morning Yoga</h2>
+              <p className="text-white/60">Align body, breath, and devotion in a calm temple setting</p>
+            </div>
+          </div>
+
+          <div className="bg-dark rounded-lg p-6 border border-gold/30">
+            <p className="text-white/70 leading-relaxed mb-6">
+              Join us for a gentle, all-levels yoga session designed to support mindfulness, flexibility,
+              and inner balance. Our practice blends traditional postures with guided breathing and a
+              peaceful atmosphere rooted in bhakti, making it a welcoming space for newcomers and
+              experienced practitioners alike.
+            </p>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <div className="flex items-center gap-2 text-gold">
+                <span className="font-medium">Occurs:</span>
+                <span className="text-white/70">Every Sunday at 10:00 AM</span>
+              </div>
+              <div className="flex items-center gap-2 text-gold">
+                <span className="font-medium">Location:</span>
+                <span className="text-white/70">ISKCON of New Jersey Temple Hall</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Govinda's Catering Section */}
-      <section className="py-24 px-4 bg-charcoal">
+      <section id="catering" className="py-24 px-4 bg-charcoal">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">

@@ -30,6 +30,7 @@ const navItems = [
     path: '/services',
     submenu: [
       { name: 'Puja/Samskaras', path: '/services' },
+      { name: 'Yoga', path: '/services#yoga' },
       { name: 'Volunteer', path: '/volunteer' },
       { name: "Govinda's Catering", path: '/services#catering' },
       { name: 'Hall Rental', path: '/hall-rental' },
