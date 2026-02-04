@@ -3,10 +3,38 @@ import { Calendar, Clock } from 'lucide-react';
 const baseUrl = import.meta.env.BASE_URL;
 
 const upcomingEvents = [
-  { title: 'Bhagavad Gita 10-Week Course', date: 'Feb 05, 2026', time: '8:00-9:00 PM', description: 'Join us for a comprehensive 10-week journey through the Bhagavad Gita.' },
-  { title: 'Vijaya Ekadasi', date: 'Feb 12, 2026', time: 'All Day', description: 'Auspicious fasting day with extended kirtan and spiritual programs.' },
-  { title: 'Amalaki Vrata Ekadashi', date: 'Feb 27, 2026', time: 'All Day', description: 'Special Ekadashi observance with temple programs throughout the day.' },
-  { title: 'Nityananda Trayodasi Festival', date: 'Jan 30, 2026', time: '6:00 PM', description: 'Grand celebration of the appearance day of Lord Nityananda with abhisheka, kirtan, and feast.' },
+  {
+    title: 'Bhagavad Gita 10-Week Course',
+    date: 'Feb 05, 2026',
+    time: '8:00-9:00 PM',
+    description: 'Join us for a comprehensive 10-week journey through the Bhagavad Gita.',
+    start: '2026-02-05T20:00:00-05:00',
+    end: '2026-02-05T21:00:00-05:00',
+  },
+  {
+    title: 'Vijaya Ekadasi',
+    date: 'Feb 12, 2026',
+    time: 'All Day',
+    description: 'Auspicious fasting day with extended kirtan and spiritual programs.',
+    allDay: true,
+    startDate: '2026-02-12',
+  },
+  {
+    title: 'Amalaki Vrata Ekadashi',
+    date: 'Feb 27, 2026',
+    time: 'All Day',
+    description: 'Special Ekadashi observance with temple programs throughout the day.',
+    allDay: true,
+    startDate: '2026-02-27',
+  },
+  {
+    title: 'Nityananda Trayodasi Festival',
+    date: 'Jan 30, 2026',
+    time: '6:00 PM',
+    description: 'Grand celebration of the appearance day of Lord Nityananda with abhisheka, kirtan, and feast.',
+    start: '2026-01-30T18:00:00-05:00',
+    end: '2026-01-30T20:00:00-05:00',
+  },
 ];
 
 const recurringPrograms = [
@@ -16,6 +44,86 @@ const recurringPrograms = [
   { day: 'Sunday', program: 'Sunday School', time: '5:00 PM - 6:00 PM' },
   { day: 'Sunday', program: 'Evening Program & Feast', time: '6:00 PM' },
 ];
+
+const pad = (value: number) => String(value).padStart(2, '0');
+
+const toUtcStamp = (date: Date) =>
+  `${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}T${pad(
+    date.getUTCHours()
+  )}${pad(date.getUTCMinutes())}${pad(date.getUTCSeconds())}Z`;
+
+const toDateStamp = (date: Date) =>
+  `${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}`;
+
+const addDays = (date: Date, days: number) => {
+  const next = new Date(date);
+  next.setUTCDate(next.getUTCDate() + days);
+  return next;
+};
+
+const buildGoogleCalendarUrl = (event: typeof upcomingEvents[number]) => {
+  const base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+  const details = encodeURIComponent(event.description);
+  const location = encodeURIComponent('ISKCON of New Jersey, 100 Jacksonville Road, Towaco, NJ 07082');
+
+  if (event.allDay && event.startDate) {
+    const start = new Date(`${event.startDate}T00:00:00Z`);
+    const end = addDays(start, 1);
+    const dates = `${toDateStamp(start)}/${toDateStamp(end)}`;
+    return `${base}&text=${encodeURIComponent(event.title)}&dates=${dates}&details=${details}&location=${location}`;
+  }
+
+  if (event.start && event.end) {
+    const start = toUtcStamp(new Date(event.start));
+    const end = toUtcStamp(new Date(event.end));
+    return `${base}&text=${encodeURIComponent(event.title)}&dates=${start}/${end}&details=${details}&location=${location}`;
+  }
+
+  return base;
+};
+
+const buildIcsDataUrl = (event: typeof upcomingEvents[number]) => {
+  const description = event.description.replace(/\n/g, '\\n');
+  const location = 'ISKCON of New Jersey, 100 Jacksonville Road, Towaco, NJ 07082';
+  const uid = `${event.title.replace(/\s+/g, '-')}-${event.date.replace(/\s+/g, '')}@iskconnj`;
+
+  let dtStart = '';
+  let dtEnd = '';
+  let extra = '';
+
+  if (event.allDay && event.startDate) {
+    const start = new Date(`${event.startDate}T00:00:00Z`);
+    const end = addDays(start, 1);
+    dtStart = `DTSTART;VALUE=DATE:${toDateStamp(start)}`;
+    dtEnd = `DTEND;VALUE=DATE:${toDateStamp(end)}`;
+  } else if (event.start && event.end) {
+    dtStart = `DTSTART:${toUtcStamp(new Date(event.start))}`;
+    dtEnd = `DTEND:${toUtcStamp(new Date(event.end))}`;
+  } else {
+    extra = 'X-INVALID-DATES:TRUE';
+  }
+
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//ISKCON NJ//Events//EN',
+    'CALSCALE:GREGORIAN',
+    'BEGIN:VEVENT',
+    `UID:${uid}`,
+    `SUMMARY:${event.title}`,
+    `DESCRIPTION:${description}`,
+    `LOCATION:${location}`,
+    dtStart,
+    dtEnd,
+    extra,
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`;
+};
 
 export default function Events() {
   return (
@@ -76,6 +184,23 @@ export default function Events() {
                   <Clock className="w-4 h-4" /> {event.time}
                 </p>
                 <p className="text-white/70 text-sm">{event.description}</p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a
+                    href={buildGoogleCalendarUrl(event)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary"
+                  >
+                    Add to Google
+                  </a>
+                  <a
+                    href={buildIcsDataUrl(event)}
+                    download={`${event.title.replace(/\s+/g, '-')}.ics`}
+                    className="btn-secondary"
+                  >
+                    Download ICS
+                  </a>
+                </div>
               </div>
             ))}
           </div>
