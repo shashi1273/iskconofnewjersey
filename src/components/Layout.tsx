@@ -34,6 +34,7 @@ const navItems = [
       { name: 'Yoga', path: '/services#yoga' },
       { name: 'Volunteer', path: '/volunteer' },
       { name: "Govinda's Catering", path: '/services#catering' },
+      { name: 'Vehicle Registration', path: 'https://iskcon-towaco.github.io/vehicle/', external: true },
       { name: 'Hall Rental', path: '/hall-rental' },
     ]
   },
