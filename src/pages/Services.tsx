@@ -17,9 +17,7 @@ const samskaras = [
   { name: 'Birthday Puja', inTemple: '$151', outside: '-' },
   { name: 'Marriage Anniversary', inTemple: '$108', outside: '-' },
   { name: 'Nrsimha Homa', inTemple: '$108', outside: '$151' },
-  { name: 'Anthyesti (Funeral)', inTemple: '-', outside: '$301' },
   { name: 'Vastu Puja', inTemple: '-', outside: '$201' },
-  { name: 'Pinda Daan (10-13 days)', inTemple: '-', outside: '$351' },
   { name: 'Tarpana (Amavasya)', inTemple: '-', outside: '$108' },
 ];
 
