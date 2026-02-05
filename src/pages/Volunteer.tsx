@@ -99,6 +99,45 @@ export default function Volunteer() {
         </div>
       </section>
 
+      {/* Volunteer Programs */}
+      <section className="py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-heading text-3xl text-white mb-8 text-center">Volunteer Programs</h2>
+          <p className="text-white/60 max-w-3xl mx-auto text-center mb-12">
+            Offer your time as a heartfelt gift to Sri Sri Gaura Nitai. Whether you are a student,
+            a young devotee, or a working professional, your service helps the temple flourish and
+            spreads Krishna consciousness in our community.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card">
+              <h3 className="font-heading text-xl text-white mb-3">Temple Volunteers & Youth Hours</h3>
+              <p className="text-white/60">
+                We welcome students and youth volunteers seeking service hours. From assisting in
+                festivals to helping with prasadam and temple activities, you can earn volunteer
+                hours while participating in uplifting devotional service.
+              </p>
+            </div>
+            <div className="card">
+              <h3 className="font-heading text-xl text-white mb-3">Corporate Volunteer Reimbursement</h3>
+              <p className="text-white/60">
+                Many companies offer volunteer reimbursement programs. If your employer supports
+                matching or reimbursement for volunteer hours, we can provide confirmation of your
+                service at the temple.
+              </p>
+            </div>
+            <div className="card">
+              <h3 className="font-heading text-xl text-white mb-3">Shelter Cooking Seva</h3>
+              <p className="text-white/60">
+                Join our shelter cooking seva to prepare and serve meals with devotion and care.
+                If your family or group can support ingredients, sponsor a cooking day, or lend a
+                helping hand, we would be grateful for your support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 border-t border-gold/20">
         <div className="max-w-3xl mx-auto px-4 text-center">
