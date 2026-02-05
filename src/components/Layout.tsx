@@ -20,6 +20,7 @@ const navItems = [
     path: '/media',
     submenu: [
       { name: 'All Media', path: '/media' },
+      { name: 'Webcam', path: '/webcam' },
       { name: 'Newsletter', path: 'http://eepurl.com/dItT-H', external: true },
       { name: 'Instagram Feed', path: 'https://instagram.com/iskconofnewjersey', external: true },
       { name: 'Videos', path: 'https://www.youtube.com/@ISKCONofNewJersey', external: true },

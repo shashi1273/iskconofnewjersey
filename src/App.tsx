@@ -14,6 +14,7 @@ import ChildProtection from './pages/ChildProtection';
 import GuestRegistration from './pages/GuestRegistration';
 import EReimbursements from './pages/EReimbursements';
 import FinancialReports from './pages/FinancialReports';
+import Webcam from './pages/Webcam';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="guest-registration" element={<GuestRegistration />} />
           <Route path="e-reimbursements" element={<EReimbursements />} />
           <Route path="financial-reports" element={<FinancialReports />} />
+          <Route path="webcam" element={<Webcam />} />
         </Route>
       </Routes>
     </HashRouter>
