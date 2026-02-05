@@ -4,6 +4,21 @@ import { ExternalLink, Video } from 'lucide-react';
 const STREAM_URL =
   'https://stream-us1-alfa.dropcam.com:443/nexus_aac/5ce0fe2e35e748fa8d816a15ca48cea9/playlist.m3u8?public=I9gstai3lQ';
 
+const loadHlsScript = () =>
+  new Promise<void>((resolve, reject) => {
+    if ((window as any).Hls) {
+      resolve();
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.21/dist/hls.min.js';
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Failed to load HLS script'));
+    document.head.appendChild(script);
+  });
+
 export default function Webcam() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -20,12 +35,15 @@ export default function Webcam() {
       }
 
       try {
-        const module = await import('hls.js');
-        const Hls = module.default;
-        if (Hls.isSupported()) {
+        await loadHlsScript();
+        const Hls = (window as any).Hls;
+        if (Hls?.isSupported?.()) {
           hls = new Hls({ lowLatencyMode: true });
           hls.loadSource(STREAM_URL);
           hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            video.play().catch(() => undefined);
+          });
         }
       } catch (error) {
         // If HLS.js fails to load, leave fallback link below.
